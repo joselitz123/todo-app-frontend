@@ -3,11 +3,10 @@ import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import {AuthentikService} from '../auth/authentik.service';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [AsyncPipe, TitleCasePipe],
-  templateUrl: './header.component.html',
-  styles: ``
+    selector: 'app-header',
+    imports: [AsyncPipe, TitleCasePipe],
+    templateUrl: './header.component.html',
+    styles: ``
 })
 export class HeaderComponent {
     authService = inject(AuthentikService);

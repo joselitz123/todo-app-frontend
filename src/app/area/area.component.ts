@@ -3,11 +3,10 @@ import {A11yModule} from '@angular/cdk/a11y'
 import { AreaService } from './area.service';
 
 @Component({
-  selector: 'app-area',
-  standalone: true,
-  imports: [A11yModule],
-  templateUrl: './area.component.html',
-  styles: ``
+    selector: 'app-area',
+    imports: [A11yModule],
+    templateUrl: './area.component.html',
+    styles: ``
 })
 export class AreaComponent implements OnInit, OnDestroy{
 
