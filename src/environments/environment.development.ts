@@ -9,4 +9,10 @@ export const environment = {
     auth_response_type: 'code',
     auth_scope: 'openid profile email offline_access',
     auth_show_debug_information: true,
+    backend_api_url: 'localhost:3001/api',
+    backend_api: {
+        todo_area: {
+            add: '/v1/add'
+        }
+    }
 };

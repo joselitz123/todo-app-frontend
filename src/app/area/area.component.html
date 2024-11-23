@@ -7,11 +7,11 @@
                         @if (showInputField) {
                             <li>
                                  <div class="">
-                                        <input id="area-field" type="text" class="w-full py-3 text-center bg-transparent"  (blur)="showFieldHandler()" cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
+                                        <input id="area-field" [formControl]="area_name" type="text" class="w-full py-3 text-center bg-transparent"  (blur)="addNewAreaInputFieldHandler()" cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
                                 </div>
                         </li>
                         } @else {
-                            <li><button class="py-3 w-full hover:bg-customTernary rounded-sm" (click)="showFieldHandler()">Add Area</button></li>
+                            <li><button class="py-3 w-full hover:bg-customTernary rounded-sm" (click)="addNewAreaInputFieldHandler()">Add Area</button></li>
                         }
                 </ul>
             </div>
