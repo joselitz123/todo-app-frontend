@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, exhaustMap, tap } from 'rxjs';
+import { BehaviorSubject, exhaustMap } from 'rxjs';
 import {AreaTodoType} from '../../generic';
 
 @Injectable({

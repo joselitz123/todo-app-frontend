@@ -1,1 +1,8 @@
-<p>area-id works!</p>
+<main>
+    @if (status$ | async; as status) {
+        @for (item of status.data; track $index) {
+            {{item.name}}
+        }
+    }
+    <div class=""></div>
+</main>

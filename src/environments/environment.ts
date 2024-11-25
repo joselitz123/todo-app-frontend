@@ -14,6 +14,9 @@ export const environment = {
         area: {
             post: '/v1/area',
             get: '/v1/area'
+        },
+        status: {
+            get: '/v1/status'
         }
     }
 };
