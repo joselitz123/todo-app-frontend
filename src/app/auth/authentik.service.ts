@@ -19,11 +19,9 @@ export class AuthentikService {
     private oAuthStorage = inject(OAuthStorage);
     profile = new BehaviorSubject<Profile | null>(null);
 
-
     constructor() {
         this.initConfiguration();
      }
-
 
     initConfiguration() {
         this.oAuthService.configure(authConfig);

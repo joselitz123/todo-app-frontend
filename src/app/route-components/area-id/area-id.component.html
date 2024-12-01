@@ -1,8 +1,10 @@
-<main>
+<main class="my-10">
     @if (status$ | async; as status) {
-        @for (item of status.data; track $index) {
-            {{item.name}}
-        }
+        <ul class="grid justify-start grid-flow-col mx-10 gap-5">
+            @for (item of status.data; track $index) {
+                <li><app-status [status]="item" /></li>
+            }
+        </ul>
     }
     <div class=""></div>
 </main>

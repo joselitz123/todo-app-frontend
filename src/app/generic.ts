@@ -1,4 +1,4 @@
-export interface AreaTodoType {
+export interface AreaTodoAPIResponseType {
     success: boolean;
     data: {
         area_id: number;
@@ -9,13 +9,14 @@ export interface AreaTodoType {
 }
 
 
-export interface StatusType {
-    success: boolean;
-    data: {
+export type StatusType = {
         name: string;
         status_id: number;
         status_color: string;
         actual_status: string;
         order: number;
-    }[]
-}
+    };
+export interface StatusAPIRedsponseType {
+    success: boolean;
+    data: StatusType[]
+};
