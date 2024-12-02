@@ -23,6 +23,7 @@
     "@ng-icons/heroicons": "^29.10.0",
     "angular-oauth2-oidc": "^17.0.2",
     "rxjs": "~7.8.0",
+    "todo-app": "file:",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
