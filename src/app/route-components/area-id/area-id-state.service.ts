@@ -18,5 +18,13 @@ interface Todo {
 export class AreaIdStateService {
 
     private state = signal<Todo>([] as any);
-  constructor() { }
+    private _areaId = signal(0);
+
+    set areaId(areaId: number){
+        this._areaId.set(areaId);
+    }
+
+    get areaId(){
+        return this._areaId();
+    }
 }

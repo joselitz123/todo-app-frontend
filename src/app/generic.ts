@@ -16,7 +16,17 @@ export type StatusType = {
         actual_status: string;
         order: number;
     };
-export interface StatusAPIRedsponseType {
+export interface StatusAPIResponseType {
     success: boolean;
-    data: StatusType[]
+    data: StatusType[];
 };
+
+export type LabelType = {
+    label_id: string;
+    name: string;
+    color: string;
+}
+export interface LabelAPIResponseType{
+    success: boolean;
+    data: LabelType[];
+}

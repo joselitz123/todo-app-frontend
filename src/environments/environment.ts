@@ -17,6 +17,9 @@ export const environment = {
         },
         status: {
             get: '/v1/status'
+        },
+        label: {
+            get: '/v1/label'
         }
     }
 };

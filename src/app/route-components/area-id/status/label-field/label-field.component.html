@@ -28,6 +28,11 @@
             @for (item of dummyItems; track $index) {
                 <li class="bg-customTernary rounded-md px-1 cursor-pointer">{{item}}</li>
             }
+            @if (labelList$ | async; as labelList) {
+                @for (item of labelList.data; track $index) {
+                    <li class="bg-customTernary rounded-md px-1 cursor-pointer">{{item}}</li>
+                }
+            }
         </ul>
     </div>
     <hr class="border-slate-500">
