@@ -5,11 +5,11 @@ import { NgStyle, TitleCasePipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { LabelFieldComponent } from './label-field/label-field.component';
 import { DueFieldComponent } from './due-field/due-field.component';
-import { AsssignedFieldComponent } from './asssigned-field/asssigned-field.component';
+import { AssignedFieldComponent } from './assigned-field/assigned-field.component';
 
 @Component({
   selector: 'app-status',
-  imports: [TitleCasePipe, NgStyle, A11yModule, LabelFieldComponent, DueFieldComponent, AsssignedFieldComponent],
+  imports: [TitleCasePipe, NgStyle, A11yModule, LabelFieldComponent, DueFieldComponent, AssignedFieldComponent],
   templateUrl: './status.component.html',
   styles: ``,
   providers: []

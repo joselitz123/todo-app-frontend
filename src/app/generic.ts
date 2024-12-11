@@ -35,3 +35,14 @@ export interface LabelPostAPIPayloadType {
     label_name: string;
     label_color: string;
 }
+
+export type AreaUserType = {
+    user_id: number;
+    username: string;
+    name: string;
+    email: string
+}[]
+export interface AreaUserAPIResponseType{
+    success: boolean;
+    data: AreaUserType
+}

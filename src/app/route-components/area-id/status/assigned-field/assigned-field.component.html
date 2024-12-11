@@ -21,8 +21,8 @@
 >
 <div class="bg-customSecondary py-2 px-1 text-slate-300 border border-slate-500 rounded text-sm flex flex-col gap-1">
         <ul class="flex flex-row flex-wrap gap-1 text-sm">
-            @for (item of dummyItems; track $index) {
-                <li class="bg-customTernary rounded-md px-1">{{item}}</li>
+            @for (item of users().data; track $index) {
+                <li class="bg-customTernary rounded-md px-1">{{item.username}}</li>
             }
         </ul>
 </div>

@@ -15,6 +15,9 @@ export const environment = {
             post: '/v1/area',
             get: '/v1/area'
         },
+        area_user: {
+            get: '/v1/area/user'
+        },
         status: {
             get: '/v1/status'
         },
