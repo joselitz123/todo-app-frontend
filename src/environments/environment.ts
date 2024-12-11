@@ -19,6 +19,7 @@ export const environment = {
             get: '/v1/status'
         },
         label: {
+            post: '/v1/label',
             get: '/v1/label'
         }
     }

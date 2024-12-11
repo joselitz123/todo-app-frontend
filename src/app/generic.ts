@@ -8,7 +8,6 @@ export interface AreaTodoAPIResponseType {
     }[]
 }
 
-
 export type StatusType = {
         name: string;
         status_id: number;
@@ -25,8 +24,14 @@ export type LabelType = {
     label_id: string;
     name: string;
     color: string;
-}
+}[]
 export interface LabelAPIResponseType{
     success: boolean;
-    data: LabelType[];
+    data: LabelType;
+}
+
+export interface LabelPostAPIPayloadType {
+    area_id: number;
+    label_name: string;
+    label_color: string;
 }

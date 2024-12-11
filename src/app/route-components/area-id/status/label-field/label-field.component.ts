@@ -1,36 +1,33 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { A11yModule } from '@angular/cdk/a11y';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { LabelFieldService } from './label-field.service';
-import { AsyncPipe } from '@angular/common';
-import { LabelType } from '../../../../generic';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AreaIdStateService } from '../../area-id-state.service';
+import randomColor from 'randomcolor';
+import { NgStyle } from '@angular/common';
+
 
 @Component({
   selector: 'app-label-field',
-  imports: [CdkOverlayOrigin, CdkConnectedOverlay, A11yModule, ReactiveFormsModule, AsyncPipe],
+  imports: [CdkOverlayOrigin, CdkConnectedOverlay, A11yModule, ReactiveFormsModule, NgStyle],
   templateUrl: './label-field.component.html',
   styles: `
   `,
 })
-export class LabelFieldComponent implements OnInit {
+export class LabelFieldComponent{
 
-    labelFieldService = inject(LabelFieldService);
+    private labelFieldService = inject(LabelFieldService);
     private areaIdState = inject(AreaIdStateService);
+
     protected isOptionOpen = signal<boolean>(true);
     protected showAddLabelField = signal<boolean>(false);
-    protected labelList$ = this.labelFieldService.getLabelList(this.areaIdState.areaId);
+    
+    private initialLabelList = toSignal(this.labelFieldService.getAreaLabels(this.areaIdState.areaId), {initialValue: {data: [], success: false}}); 
+    protected labelList = computed(() => signal(this.initialLabelList()));
 
-    protected labelList = signal<LabelType[]>([]);
     labelField = new FormControl('');
-
-
-    dummyItems = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6'];
-
-    ngOnInit(): void {
-    }
 
     toggleOverlayHandler(){
         this.isOptionOpen.set(!this.isOptionOpen());
@@ -39,10 +36,15 @@ export class LabelFieldComponent implements OnInit {
     toggleAddLabelHandler(){
         this.showAddLabelField.set(!this.showAddLabelField());
         if (this.labelField.value && this.labelField.value.length > 0) {
-            //    Add input handler here 
+            this.insertLabelHandler(); //    Add input handler here
             this.toggleOverlayHandler();
             this.labelField.reset();
         }
+    }
+
+    insertLabelHandler(){
+        this.labelFieldService.insertLabel(this.labelField.value || '', randomColor({luminosity: 'dark'}), this.areaIdState.areaId)
+        .subscribe(data => this.labelList().update(() => data));
     }
 
 }
