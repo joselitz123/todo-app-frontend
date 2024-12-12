@@ -56,5 +56,4 @@ export interface TodoItemsType {
     assigned?: number[];
     description?: string;
     checklist: [];
-    sub_tasks?: Todo[];
 }[]
