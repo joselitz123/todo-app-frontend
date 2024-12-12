@@ -3,36 +3,7 @@
         {{status()?.name | titlecase}}
     </p>
     @if (showAddTodoField()) {
-        <div class="mx-1 mt-4 p-1 bg-customSecondary rounded-sm" (blur)="toggleAddTodoField()">
-            <textarea class="ring-0 px-2 py-2 w-full font-semibold bg-customTernary text-slate-400 rounded resize-none"
-                type="text" name="todo" cdkTrapFocus [cdkTrapFocusAutoCapture]="true"
-             ></textarea>
-            <div class="flex mb-1 items-center">
-                <label for="priority" class="w-5 flex-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
-                        <path fill-rule="evenodd" d="M3 2.25a.75.75 0 0 1 .75.75v.54l1.838-.46a9.75 9.75 0 0 1 6.725.738l.108.054A8.25 8.25 0 0 0 18 4.524l3.11-.732a.75.75 0 0 1 .917.81 47.784 47.784 0 0 0 .005 10.337.75.75 0 0 1-.574.812l-3.114.733a9.75 9.75 0 0 1-6.594-.77l-.108-.054a8.25 8.25 0 0 0-5.69-.625l-2.202.55V21a.75.75 0 0 1-1.5 0V3A.75.75 0 0 1 3 2.25Z" clip-rule="evenodd" />
-                    </svg>
-                </label>
-                <select name="priority" id="priority" class="bg-customTernary text-sm flex-1 rounded py-1">
-                    <option value="" disabled [defaultSelected]="true" class="hidden">Priority</option>
-                    <option value="">Critical</option>
-                    <option value="">High</option>
-                    <option value="">Moderate</option>
-                    <option value="">Low</option>
-                </select>
-            </div>
-            <app-label-field />
-            <app-due-field />
-            <div class="flex mb-1 items-center">
-                <label for="external_reference" class="flex-none w-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
-                        <path fill-rule="evenodd" d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z" clip-rule="evenodd" />
-                    </svg>
-                </label>
-                <input type="text" class="bg-customTernary rounded py-1 px-1 text-sm flex-1 w-full" placeholder="External Reference" name="external reference" id="external_reference" />
-            </div>
-            <app-assigned-field />
-        </div>
+        <app-todo-item />
     } @else {
         <div class="mt-4">
             <button (click)="toggleAddTodoField()" class="mx-1 px-3 py-2 text-slate-400 font-semibold w-full" >Add Task</button>

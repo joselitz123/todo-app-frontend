@@ -4,7 +4,7 @@ import { A11yModule } from '@angular/cdk/a11y';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { LabelFieldService } from './label-field.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { AreaIdStateService } from '../../area-id-state.service';
+import { AreaIdStateService } from '../../../area-id-state.service';
 import randomColor from 'randomcolor';
 import { NgStyle } from '@angular/common';
 

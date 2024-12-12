@@ -3,13 +3,14 @@ import {A11yModule} from '@angular/cdk/a11y'
 import { StatusType } from '../../../generic';
 import { NgStyle, TitleCasePipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
-import { LabelFieldComponent } from './label-field/label-field.component';
-import { DueFieldComponent } from './due-field/due-field.component';
-import { AssignedFieldComponent } from './assigned-field/assigned-field.component';
+import { LabelFieldComponent } from './todo-item/label-field/label-field.component';
+import { DueFieldComponent } from './todo-item/due-field/due-field.component';
+import { AssignedFieldComponent } from './todo-item/assigned-field/assigned-field.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @Component({
   selector: 'app-status',
-  imports: [TitleCasePipe, NgStyle, A11yModule, LabelFieldComponent, DueFieldComponent, AssignedFieldComponent],
+  imports: [TitleCasePipe, NgStyle, TodoItemComponent ],
   templateUrl: './status.component.html',
   styles: ``,
   providers: []

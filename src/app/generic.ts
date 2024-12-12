@@ -46,3 +46,15 @@ export interface AreaUserAPIResponseType{
     success: boolean;
     data: AreaUserType
 }
+
+export interface TodoItemsType {
+    id: number;
+    name: string;
+    priority: string;
+    label?: number[];
+    external_reference?: string;
+    assigned?: number[];
+    description?: string;
+    checklist: [];
+    sub_tasks?: Todo[];
+}[]

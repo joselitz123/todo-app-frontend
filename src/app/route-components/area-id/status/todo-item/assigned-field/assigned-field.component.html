@@ -21,9 +21,9 @@
 >
 <div class="bg-customSecondary py-2 px-1 text-slate-300 border border-slate-500 rounded text-sm flex flex-col gap-1">
         <ul class="flex flex-row flex-wrap gap-1 text-sm">
-            @if (users.value(); as items) {
+            @if (userList.value(); as items) {
                 @for (item of items.data; track $index) {
-                    <li class="bg-customTernary rounded-md px-1">{{item.username}}</li>
+                    <li (click)="this.selectUserHandler(item.user_id)" class="bg-customTernary rounded-md px-1 cursor-pointer">{{item.username}}</li>
                 }
             }
             @else {
