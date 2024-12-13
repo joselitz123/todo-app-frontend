@@ -1,7 +1,8 @@
 <div class="mx-1 mt-4 p-1 bg-customSecondary rounded-sm" (blur)="toggleAddTodoField()">
-    <textarea class="ring-0 px-2 py-2 w-full font-semibold bg-customTernary text-slate-400 rounded resize-none"
-        type="text" name="todo" cdkTrapFocus [cdkTrapFocusAutoCapture]="true"
-        ></textarea>
+    <div class="mb-1">
+        <input class="ring-0 px-2 py-2 w-full font-medium bg-customTernary text-slate-400 rounded"
+        type="text" name="todo" cdkTrapFocus [cdkTrapFocusAutoCapture]="true"/>
+    </div>
     <div class="flex mb-1 items-center">
         <label for="priority" class="w-5 flex-none">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">

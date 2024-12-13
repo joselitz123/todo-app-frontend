@@ -7,7 +7,8 @@ import { TodoItemsType } from '../../generic';
 })
 export class AreaIdStateService {
 
-    private state = signal<TodoItemsType>([] as any);
+    private todosState = signal<TodoItemsType>({});
+    private todoOrder = signal<number[]>([]);
     private _areaId = signal(0);
 
     set areaId(areaId: number){
@@ -16,5 +17,9 @@ export class AreaIdStateService {
 
     get areaId(){
         return this._areaId();
+    }
+
+    addNewTodo(todoData: TodoItemsType[keyof TodoItemsType]){
+        this.todosState.set({...this.todosState(), [-1]:todoData})
     }
 }

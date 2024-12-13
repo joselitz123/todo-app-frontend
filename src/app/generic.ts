@@ -47,8 +47,9 @@ export interface AreaUserAPIResponseType{
     data: AreaUserType
 }
 
-export interface TodoItemsType {
-    id: number;
+export type TodoItemsType = {[key: number]: {
+    todo_id: number;
+    status_id: number;
     name: string;
     priority: string;
     label?: number[];
@@ -56,4 +57,6 @@ export interface TodoItemsType {
     assigned?: number[];
     description?: string;
     checklist: [];
-}[]
+    created_at?: string;
+    updated_at?: string;
+}}
